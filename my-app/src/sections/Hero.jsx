@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Hero() {
   const ticker = [
     'Web Apps', 'Mobile', 'SaaS MVPs', 'AI Tools',
@@ -49,7 +51,7 @@ export default function Hero() {
             marginBottom: '2rem',
           }}
         >
-          Full-Stack Development Studio &nbsp;·&nbsp; Navi Mumbai
+          Full Stack Developer & AI Builder &nbsp;·&nbsp; Navi Mumbai
         </p>
 
         {/* Main headline */}
@@ -66,9 +68,9 @@ export default function Hero() {
             maxWidth: '900px',
           }}
         >
-          We Build Digital<br />
-          Products <span style={{ color: '#C9A96E' }}>Clients</span><br />
-          Love.
+          I Build Digital<br />
+          Products <span style={{ color: '#C9A96E' }}>That</span><br />
+          Work.
         </h1>
 
         {/* Sub-headline */}
@@ -83,8 +85,8 @@ export default function Hero() {
             marginBottom: '3rem',
           }}
         >
-          Web apps, mobile applications, and AI automation
-          built for startups and growing businesses.
+          Web apps, mobile applications, and AI tools
+          for startups and growing businesses.
         </p>
 
         {/* CTAs */}
@@ -97,8 +99,8 @@ export default function Hero() {
             flexWrap: 'wrap',
           }}
         >
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 600,
@@ -114,8 +116,8 @@ export default function Hero() {
             onMouseEnter={e => e.currentTarget.style.background = '#E8D5B0'}
             onMouseLeave={e => e.currentTarget.style.background = '#C9A96E'}
           >
-            Start a Project
-          </a>
+            Hire Me
+          </Link>
           <a
             href="#projects"
             style={{
@@ -132,7 +134,7 @@ export default function Hero() {
             onMouseEnter={e => e.currentTarget.style.color = '#F2EDE4'}
             onMouseLeave={e => e.currentTarget.style.color = '#7A7670'}
           >
-            View Our Work →
+            View My Work →
           </a>
         </div>
       </div>

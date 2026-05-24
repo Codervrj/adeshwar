@@ -49,9 +49,9 @@ export default function Contact() {
     <div style={{ background: '#111110' }}>
       <SectionWrapper id="contact">
         <SectionHeading
-          label="Get In Touch"
-          title="Let's Build Something"
-          subtitle="Tell us what you need. We'll respond within 24 hours."
+          label="Hire Me"
+          title="Let's Work Together"
+          subtitle="Tell me what you're building. I'll respond within 24 hours."
         />
 
         <div style={{
@@ -260,7 +260,7 @@ export default function Contact() {
                   Fast Response
                 </div>
                 <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', color: '#7A7670' }}>
-                  We respond to every inquiry within 24 hours
+                  I respond to every inquiry within 24 hours
                 </div>
               </div>
             </div>

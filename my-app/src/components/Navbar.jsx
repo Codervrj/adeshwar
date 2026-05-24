@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const links = [
-  { label: 'Home', to: '/' },
+  { label: 'Work', to: '/projects' },
   { label: 'Services', to: '/services' },
-  { label: 'Projects', to: '/projects' },
   { label: 'About', to: '/about' },
 ]
 
@@ -52,7 +51,7 @@ export default function Navbar() {
             color: '#F2EDE4',
             letterSpacing: '-0.02em',
           }}>
-            Adeshwar<span style={{ color: '#C9A96E' }}>.</span>
+            Varun Jain<span style={{ color: '#C9A96E' }}>.</span>
           </span>
         </Link>
 
@@ -92,7 +91,7 @@ export default function Navbar() {
             onMouseEnter={e => e.target.style.background = '#E8D5B0'}
             onMouseLeave={e => e.target.style.background = '#C9A96E'}
           >
-            Get In Touch
+            Hire Me
           </Link>
         </div>
 

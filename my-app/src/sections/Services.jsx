@@ -11,19 +11,15 @@ export default function Services() {
     <div style={{ background: '#111110' }}>
       <SectionWrapper id="services">
         <SectionHeading
-          label="What We Build"
-          title="Services That Drive Results"
-          subtitle="From idea to deployment — we cover every layer of your product."
+          label="Skills & Services"
+          title="What I Do"
+          subtitle="End-to-end — I cover every layer of your product."
         />
 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '1px',
-          background: '#252520',
-          border: '1px solid #252520',
-          borderRadius: '10px',
-          overflow: 'hidden',
+          gap: '1.25rem',
         }} className="services-grid">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
@@ -40,6 +36,8 @@ function ServiceCard({ service }) {
     <div
       style={{
         background: '#151512',
+        border: '1px solid #252520',
+        borderRadius: '8px',
         padding: '1.75rem',
         display: 'flex',
         flexDirection: 'column',

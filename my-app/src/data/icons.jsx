@@ -79,3 +79,43 @@ export const Users = () => (
     <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
   </svg>
 )
+
+export const Monitor = () => (
+  <svg {...p}>
+    <rect x="2" y="3" width="20" height="14" rx="2"/>
+    <path d="M8 21h8M12 17v4"/>
+  </svg>
+)
+
+export const Network = () => (
+  <svg {...p}>
+    <rect x="9" y="2" width="6" height="6" rx="1"/>
+    <rect x="2" y="16" width="6" height="6" rx="1"/>
+    <rect x="16" y="16" width="6" height="6" rx="1"/>
+    <path d="M12 8v4M12 12l-4.5 4M12 12l4.5 4"/>
+  </svg>
+)
+
+export const Feather = () => (
+  <svg {...p}>
+    <path d="M20.24 12.24a6 6 0 00-8.49-8.49L5 10.5V19h8.5z"/>
+    <path d="M16 8L2 22M17.5 15H9"/>
+  </svg>
+)
+
+export const ShoppingBag = () => (
+  <svg {...p}>
+    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <path d="M16 10a4 4 0 01-8 0"/>
+  </svg>
+)
+
+export const PenTool = () => (
+  <svg {...p}>
+    <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+    <path d="M2 2l7.586 7.586"/>
+    <circle cx="11" cy="11" r="2"/>
+  </svg>
+)

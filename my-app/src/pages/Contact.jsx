@@ -1,3 +1,5 @@
-export default function Contact() {
-  return <div>Contact — Module 6 coming next</div>
+import Contact from '../sections/Contact'
+
+export default function ContactPage() {
+  return <Contact />
 }

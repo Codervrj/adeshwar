@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Home', to: '/' },
+  { label: 'Work', to: '/projects' },
   { label: 'Services', to: '/services' },
-  { label: 'Projects', to: '/projects' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ]
@@ -67,7 +66,7 @@ export default function Footer() {
               marginBottom: '0.5rem',
               letterSpacing: '-0.02em',
             }}>
-              Adeshwar<span style={{ color: '#C9A96E' }}>.</span>
+              Varun Jain<span style={{ color: '#C9A96E' }}>.</span>
             </div>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -76,7 +75,7 @@ export default function Footer() {
               lineHeight: 1.6,
               maxWidth: '240px',
             }}>
-              Build. Automate. Deliver.
+              Full Stack Developer & AI Builder
             </p>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -84,7 +83,7 @@ export default function Footer() {
               color: '#3A3830',
               marginTop: '0.75rem',
             }}>
-              Navi Mumbai, India · Remote worldwide
+              Navi Mumbai, India · Available for remote work worldwide
             </p>
           </div>
 
@@ -176,7 +175,7 @@ export default function Footer() {
             fontSize: '0.8rem',
             color: '#3A3830',
           }}>
-            © 2026 Adeshwar Enterprises. All rights reserved.
+            © 2026 Varun Jain. All rights reserved.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem' }}>

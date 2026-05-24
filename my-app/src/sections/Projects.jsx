@@ -8,8 +8,8 @@ export default function Projects() {
   return (
     <SectionWrapper id="projects">
       <SectionHeading
-        label="Our Work"
-        title="Products We've Shipped"
+        label="Portfolio"
+        title="My Work"
         subtitle="Real systems. Measurable outcomes. Built for production."
       />
 
@@ -19,7 +19,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        style={{ marginBottom: '1px' }}
+        style={{ marginBottom: '1.25rem' }}
       >
         <ProjectCard project={featured} index={0} featured />
       </motion.div>
@@ -28,8 +28,7 @@ export default function Projects() {
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '1px',
-        background: '#252520',
+        gap: '1.25rem',
       }} className="projects-grid">
         {rest.map((project, i) => (
           <motion.div
@@ -57,16 +56,16 @@ function ProjectCard({ project, index, featured }) {
   const num = String(index + 1).padStart(2, '0')
 
   const cardStyle = {
+    height: '100%',
     background: '#151512',
-    border: featured ? '1px solid #252520' : 'none',
-    borderRadius: featured ? '10px' : 0,
+    border: '1px solid #252520',
+    borderRadius: '8px',
     padding: featured ? '2.5rem' : '2rem',
     display: 'flex',
     flexDirection: featured ? 'row' : 'column',
     gap: featured ? '4rem' : '1.25rem',
     alignItems: featured ? 'flex-start' : 'stretch',
     transition: 'border-color 0.25s ease',
-    marginBottom: featured ? '1px' : 0,
     cursor: 'default',
   }
 
@@ -129,6 +128,9 @@ function ProjectCard({ project, index, featured }) {
         {/* Case study link */}
         <a
           href={project.live}
+          onClick={project.live === '#' ? e => e.preventDefault() : undefined}
+          target={project.live !== '#' ? '_blank' : undefined}
+          rel="noopener noreferrer"
           style={{
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.85rem',
@@ -140,11 +142,12 @@ function ProjectCard({ project, index, featured }) {
             gap: '0.35rem',
             marginTop: '0.5rem',
             transition: 'gap 0.2s ease',
+            cursor: project.live === '#' ? 'default' : 'pointer',
           }}
-          onMouseEnter={e => e.currentTarget.style.gap = '0.6rem'}
+          onMouseEnter={e => { if (project.live !== '#') e.currentTarget.style.gap = '0.6rem' }}
           onMouseLeave={e => e.currentTarget.style.gap = '0.35rem'}
         >
-          View Case Study →
+          View Project →
         </a>
       </div>
     </div>

@@ -3,6 +3,7 @@ import Services from '../sections/Services'
 import Projects from '../sections/Projects'
 import WhyUs from '../sections/WhyUs'
 import Testimonials from '../sections/Testimonials'
+import Faq from '../sections/Faq'
 import Contact from '../sections/Contact'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Projects />
       <WhyUs />
       <Testimonials />
+      <Faq />
       <Contact />
     </>
   )

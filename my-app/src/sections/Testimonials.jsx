@@ -23,7 +23,7 @@ export default function Testimonials() {
   return (
     <SectionWrapper id="testimonials">
       <SectionHeading
-        label="Client Stories"
+        label="Testimonials"
         title="What Clients Say"
       />
 

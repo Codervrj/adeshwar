@@ -9,12 +9,12 @@ const stats = [
 ]
 
 const claims = [
-  'AI tooling baked into every workflow — not bolted on',
-  'Web, mobile, and backend under one roof — no coordination overhead',
-  'Shared repos and daily updates — you see progress every step',
-  "We don't disappear post-launch — retainers keep your product alive",
-  'Built by engineers with strong foundations and real product experience',
-  'Hackathon-tested — we ship under pressure without cutting corners',
+  'AI tools built into my workflow — not bolted on',
+  'Full stack: web, mobile, backend, and AI — no external dependencies',
+  'Shared repos and daily updates — you see every step',
+  "I don't disappear after launch — retainers available",
+  'Strong engineering foundations with real product experience',
+  'Hackathon-tested — I ship under pressure without cutting corners',
 ]
 
 export default function WhyUs() {
@@ -22,8 +22,8 @@ export default function WhyUs() {
     <div style={{ background: '#111110' }}>
       <SectionWrapper id="why-us">
         <SectionHeading
-          label="Why Us"
-          title="Why Teams Choose Us"
+          label="Why Me"
+          title="Why Work With Me"
         />
 
         {/* Giant stat numbers */}
@@ -90,8 +90,8 @@ export default function WhyUs() {
               letterSpacing: '-0.02em',
               marginBottom: '1rem',
             }}>
-              We're not an agency that overpromises.<br />
-              We're engineers who deliver.
+              I don't overpromise.<br />
+              I just ship.
             </h3>
             <p style={{
               fontFamily: 'Inter, sans-serif',
@@ -99,9 +99,9 @@ export default function WhyUs() {
               color: '#7A7670',
               lineHeight: 1.75,
             }}>
-              From MVP to production — we've built the tools, shipped the products,
-              and supported clients long after launch. Every project gets the same
-              level of attention, regardless of size.
+              From MVP to production, I've built the products,
+              met the deadlines, and supported clients long after
+              launch. Every project gets full attention.
             </p>
           </div>
 
