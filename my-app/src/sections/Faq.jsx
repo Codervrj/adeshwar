@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: "How do you communicate during a project?",
-    a: "You'll have access to the shared repository from day one. I send progress updates every 1–2 days and we schedule check-in calls at key milestones. You're never left wondering what's happening.",
+    a: "I send progress updates every 1–2 days and we schedule check-in calls at key milestones. You're never left wondering what's happening.",
   },
   {
     q: "Do you work with international clients?",

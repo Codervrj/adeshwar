@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
+import { services } from '../data/services'
 
 export default function Hero() {
   const ticker = [
-    'Web Apps', 'Mobile', 'SaaS MVPs', 'AI Tools',
-    'Admin Dashboards', 'Automation', 'API Integrations',
-    'Chrome Extensions', 'Chatbots', 'CTO-as-a-Service',
+    ...services.map(s => s.name),
   ]
   const items = [...ticker, ...ticker]
 
@@ -44,14 +43,14 @@ export default function Hero() {
           className="hero-fade-1"
           style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: '0.8rem',
+            fontSize: '1rem',
             fontWeight: 400,
             color: '#7A7670',
             letterSpacing: '0.04em',
             marginBottom: '2rem',
           }}
         >
-          Full Stack Developer & AI Builder &nbsp;·&nbsp; Navi Mumbai
+          Full Stack Developer & AI Builder
         </p>
 
         {/* Main headline */}
@@ -85,7 +84,7 @@ export default function Hero() {
             marginBottom: '3rem',
           }}
         >
-          Web apps, mobile applications, and AI tools
+          CRM, Web apps, and AI tools
           for startups and growing businesses.
         </p>
 
@@ -116,7 +115,7 @@ export default function Hero() {
             onMouseEnter={e => e.currentTarget.style.background = '#E8D5B0'}
             onMouseLeave={e => e.currentTarget.style.background = '#C9A96E'}
           >
-            Hire Me
+            Contact Me
           </Link>
           <a
             href="#projects"
@@ -144,24 +143,28 @@ export default function Hero() {
         position: 'relative',
         zIndex: 1,
         borderTop: '1px solid #252520',
+        borderBottom: '1px solid #252520',
         overflow: 'hidden',
-        padding: '1rem 0',
+        padding: '0.9rem 0',
+        maskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)',
       }}>
         <div className="ticker-track">
           {items.map((item, i) => (
             <span key={i} style={{
               fontFamily: 'Inter, sans-serif',
-              fontSize: '0.8rem',
-              fontWeight: 400,
-              color: '#3A3830',
+              fontSize: '0.9rem',
+              fontWeight: 700,
+              letterSpacing: '0.04em',
+              color: '#7A7670',
               whiteSpace: 'nowrap',
-              paddingRight: '3rem',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '3rem',
+              gap: '1.75rem',
+              paddingRight: '1.75rem',
             }}>
               {item}
-              <span style={{ color: '#252520', fontSize: '0.5rem' }}>◆</span>
+              <span style={{ color: '#C9A96E', fontSize: '0.4rem', opacity: 0.7 }}>◆</span>
             </span>
           ))}
         </div>
@@ -183,7 +186,7 @@ export default function Hero() {
         }
         .ticker-track {
           display: inline-flex;
-          animation: ticker-scroll 30s linear infinite;
+          animation: ticker-scroll 22s linear infinite;
           white-space: nowrap;
         }
         .ticker-track:hover {

@@ -33,7 +33,7 @@ export function SectionHeading({ label, title, subtitle }) {
       {label && (
         <span style={{
           fontFamily: 'Inter, sans-serif',
-          fontSize: '0.75rem',
+          fontSize: '1rem',
           fontWeight: 500,
           color: '#C9A96E',
           display: 'block',
@@ -45,11 +45,11 @@ export function SectionHeading({ label, title, subtitle }) {
       )}
       <h2 style={{
         fontFamily: 'Space Grotesk, sans-serif',
-        fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
-        fontWeight: 700,
+        fontSize: 'clamp(2rem, 5vw, 3.75rem)',
+        fontWeight: 800,
         color: '#F2EDE4',
-        lineHeight: 1.15,
-        letterSpacing: '-0.02em',
+        lineHeight: 1.1,
+        letterSpacing: '-0.03em',
         marginBottom: subtitle ? '1rem' : 0,
       }}>
         {title}

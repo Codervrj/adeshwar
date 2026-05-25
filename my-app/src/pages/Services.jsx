@@ -150,7 +150,7 @@ function ServiceCard({ service }) {
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
         <h3 style={{
           fontFamily: 'Space Grotesk, sans-serif',
-          fontSize: '0.95rem',
+          fontSize: '1.5rem',
           fontWeight: 600,
           color: '#F2EDE4',
           lineHeight: 1.3,

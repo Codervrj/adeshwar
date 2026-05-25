@@ -2,18 +2,18 @@ import SectionWrapper, { SectionHeading } from '../components/SectionWrapper'
 import { Link } from 'react-router-dom'
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'Next.js', 'Flutter', 'Redux'] },
+  { category: 'Frontend', items: ['React', 'Next.js', 'Redux'] },
   { category: 'Backend', items: ['Node.js', 'Express', 'FastAPI', 'Spring Boot'] },
-  { category: 'Database', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Firebase'] },
-  { category: 'AI / APIs', items: ['Claude API', 'OpenAI', 'LangChain'] },
-  { category: 'Tools', items: ['Vercel', 'Docker', 'Git', 'Postman'] },
+  { category: 'Database', items: ['MongoDB', 'PostgreSQL', 'MySQL', 'SupaBase'] },
+  { category: 'AI / APIs', items: ['Claude API', 'OpenAI', 'LangChain', "Autogen", "MCP"] },
+  { category: 'Tools', items: ['Docker', 'Git', 'Postman'] },
 ]
 
 const facts = [
-  'Based in Navi Mumbai, India',
+  'Based in India',
   'Available for remote work worldwide',
-  '5+ production products shipped',
-  'Full stack: web, mobile, AI',
+  '3+ production products shipped',
+  'Full stack: Web, Backend, AI',
   'Responds within 24 hours',
 ]
 
@@ -67,7 +67,7 @@ export default function About() {
             maxWidth: '500px',
             lineHeight: 1.7,
           }}>
-            Full Stack Developer & AI Builder based in Navi Mumbai.
+            Full Stack Developer & AI Builder.
           </p>
         </div>
       </div>
@@ -91,8 +91,8 @@ export default function About() {
             }}>
               I build production-ready products that clients trust with their
               business. Over the past few years, I've shipped web apps, mobile
-              applications, and AI-powered tools for founders and growing teams
-              — across industries from healthcare and logistics to e-commerce
+              applications, and AI-powered tools for founders and growing teams,
+              across industries from healthcare and logistics to e-commerce
               and SaaS.
             </p>
             <p style={{

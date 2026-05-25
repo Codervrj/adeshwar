@@ -3,15 +3,15 @@ import SectionWrapper, { SectionHeading } from '../components/SectionWrapper'
 
 const stats = [
   { number: '3×', label: 'Faster delivery' },
-  { number: '12+', label: 'Services offered' },
-  { number: '5', label: 'Shipped products' },
+  { number: '5+', label: 'Services offered' },
+  { number: '3', label: 'Shipped products' },
   { number: '100%', label: 'Client ownership' },
 ]
 
 const claims = [
   'AI tools built into my workflow — not bolted on',
-  'Full stack: web, mobile, backend, and AI — no external dependencies',
-  'Shared repos and daily updates — you see every step',
+  'Full stack: web, backend, and AI — no external dependencies',
+  'Daily updates — you see every step',
   "I don't disappear after launch — retainers available",
   'Strong engineering foundations with real product experience',
   'Hackathon-tested — I ship under pressure without cutting corners',

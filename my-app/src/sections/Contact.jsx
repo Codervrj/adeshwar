@@ -2,8 +2,7 @@ import { useState } from 'react'
 import SectionWrapper, { SectionHeading } from '../components/SectionWrapper'
 import { services } from '../data/services'
 
-// Replace YOUR_FORMSPREE_ID with your actual Formspree form ID from formspree.io
-const FORMSPREE_URL = 'https://formspree.io/f/YOUR_FORMSPREE_ID'
+const FORMSPREE_URL = 'https://formspree.io/f/mykvdoel'
 
 const inputStyle = {
   width: '100%',
@@ -49,7 +48,7 @@ export default function Contact() {
     <div style={{ background: '#111110' }}>
       <SectionWrapper id="contact">
         <SectionHeading
-          label="Hire Me"
+          label="Contact Me"
           title="Let's Work Together"
           subtitle="Tell me what you're building. I'll respond within 24 hours."
         />
@@ -219,8 +218,8 @@ export default function Contact() {
                 </svg>
               }
               label="Email"
-              value="contact@adeshwarenterprises.tech"
-              href="mailto:contact@adeshwarenterprises.tech"
+              value="contact@varunjain.one"
+              href="mailto:contact@varunjain.one"
             />
 
             <ContactItem
@@ -242,7 +241,7 @@ export default function Contact() {
                 </svg>
               }
               label="Location"
-              value="Navi Mumbai, India · Remote worldwide"
+              value="Remote worldwide"
             />
 
             <div style={{

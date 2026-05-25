@@ -47,7 +47,7 @@ export default function Navbar() {
           <span style={{
             fontFamily: 'Space Grotesk, sans-serif',
             fontWeight: 700,
-            fontSize: '1.1rem',
+            fontSize: '1.7rem',
             color: '#F2EDE4',
             letterSpacing: '-0.02em',
           }}>
@@ -91,7 +91,7 @@ export default function Navbar() {
             onMouseEnter={e => e.target.style.background = '#E8D5B0'}
             onMouseLeave={e => e.target.style.background = '#C9A96E'}
           >
-            Hire Me
+            Contact Me
           </Link>
         </div>
 

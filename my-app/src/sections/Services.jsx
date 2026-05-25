@@ -38,7 +38,7 @@ function ServiceCard({ service }) {
         background: '#151512',
         border: '1px solid #252520',
         borderRadius: '8px',
-        padding: '1.75rem',
+        padding: '2rem',
         display: 'flex',
         flexDirection: 'column',
         gap: '1rem',
@@ -66,19 +66,19 @@ function ServiceCard({ service }) {
       <div>
         <h3 style={{
           fontFamily: 'Space Grotesk, sans-serif',
-          fontSize: '0.95rem',
-          fontWeight: 600,
+          fontSize: '1.1rem',
+          fontWeight: 700,
           color: '#F2EDE4',
-          marginBottom: '0.4rem',
+          marginBottom: '0.5rem',
           lineHeight: 1.3,
         }}>
           {service.name}
         </h3>
         <p style={{
           fontFamily: 'Inter, sans-serif',
-          fontSize: '0.825rem',
+          fontSize: '0.95rem',
           color: '#7A7670',
-          lineHeight: 1.6,
+          lineHeight: 1.65,
         }}>
           {service.description}
         </p>

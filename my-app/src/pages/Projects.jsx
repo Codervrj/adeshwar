@@ -1,244 +1,188 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
-import SectionWrapper from '../components/SectionWrapper'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 
-const filters = ['All', 'Web App', 'Mobile', 'AI', 'Dashboard']
-
-const categoryMap = {
-  'Web App': ['Restaurant Tech', 'HealthTech', 'E-Commerce'],
-  'Mobile': ['Restaurant Tech', 'HealthTech'],
-  'AI': ['AI Automation'],
-  'Dashboard': ['Logistics', 'E-Commerce'],
-}
-
-const gridStyles = `
-  @media (max-width: 640px) {
-    .projects-page-grid { grid-template-columns: 1fr !important; }
-  }
-`
-
 export default function ProjectsPage() {
-  const [active, setActive] = useState('All')
-
-  const filtered = active === 'All'
-    ? projects
-    : projects.filter(p => categoryMap[active]?.includes(p.industry))
-
   return (
-    <div style={{ background: '#0C0C0A', paddingTop: '68px' }}>
+    <div style={{ background: '#0C0C0A', paddingTop: '68px', minHeight: '100vh' }}>
+
       {/* Page hero */}
       <div style={{
-        background: '#111110',
         borderBottom: '1px solid #252520',
         padding: '5rem 1.5rem 4rem',
       }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <p style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: '0.8rem',
+            fontSize: '1.2rem',
             color: '#C9A96E',
             marginBottom: '1.25rem',
-            letterSpacing: '0.04em',
           }}>
             Portfolio
           </p>
           <h1 style={{
             fontFamily: 'Space Grotesk, sans-serif',
-            fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
+            fontSize: 'clamp(2.75rem, 6vw, 5rem)',
             fontWeight: 800,
             color: '#F2EDE4',
-            lineHeight: 1.05,
-            letterSpacing: '-0.03em',
-            marginBottom: '1.25rem',
+            lineHeight: 1.0,
+            letterSpacing: '-0.04em',
+            marginBottom: '1.5rem',
           }}>
             My Work
           </h1>
-          <p style={{
+          {/* <p style={{
             fontFamily: 'Inter, sans-serif',
-            fontSize: '1.05rem',
+            fontSize: '1rem',
             color: '#7A7670',
-            maxWidth: '480px',
-            lineHeight: 1.7,
+            maxWidth: '400px',
+            lineHeight: 1.75,
           }}>
-            Projects I've built from idea to production.
-          </p>
+            A few projects I've shipped — each one solving a real problem for a real client.
+          </p> */}
         </div>
       </div>
 
-      <SectionWrapper>
-        {/* Filter bar */}
+      {/* Project rows */}
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
+        {projects.map((project, i) => (
+          <ProjectRow key={project.id} project={project} index={i} />
+        ))}
+      </div>
+
+      {/* CTA strip */}
+      <div style={{ borderTop: '1px solid #252520', marginTop: '2rem' }}>
         <div style={{
+          maxWidth: '1100px',
+          margin: '0 auto',
+          padding: '4rem 1.5rem',
           display: 'flex',
-          gap: '0.5rem',
+          alignItems: 'center',
+          justifyContent: 'space-between',
           flexWrap: 'wrap',
-          marginBottom: '3rem',
+          gap: '1.5rem',
         }}>
-          {filters.map((f) => (
-            <button
-              key={f}
-              onClick={() => setActive(f)}
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '0.825rem',
-                fontWeight: active === f ? 600 : 400,
-                color: active === f ? '#0C0C0A' : '#7A7670',
-                background: active === f ? '#C9A96E' : 'transparent',
-                border: `1px solid ${active === f ? '#C9A96E' : '#252520'}`,
-                borderRadius: '4px',
-                padding: '0.5rem 1.1rem',
-                cursor: 'pointer',
-                transition: 'all 0.15s ease',
-              }}
-              onMouseEnter={e => {
-                if (active !== f) {
-                  e.currentTarget.style.borderColor = '#C9A96E'
-                  e.currentTarget.style.color = '#F2EDE4'
-                }
-              }}
-              onMouseLeave={e => {
-                if (active !== f) {
-                  e.currentTarget.style.borderColor = '#252520'
-                  e.currentTarget.style.color = '#7A7670'
-                }
-              }}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
-
-        {/* Project cards */}
-        {filtered.length > 0 ? (
-          <>
-            {/* Featured first card */}
-            <motion.div
-              key={filtered[0].id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              style={{ marginBottom: '1.25rem' }}
-            >
-              <ProjectCard project={filtered[0]} index={0} featured />
-            </motion.div>
-
-            {/* Remaining in grid */}
-            {filtered.length > 1 && (
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                gap: '1.25rem',
-              }} className="projects-page-grid">
-                {filtered.slice(1).map((project, i) => (
-                  <motion.div
-                    key={project.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: i * 0.07 }}
-                  >
-                    <ProjectCard project={project} index={i + 1} />
-                  </motion.div>
-                ))}
-              </div>
-            )}
-          </>
-        ) : (
-          <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: '#3A3830', padding: '2rem 0' }}>
-            No projects in this category yet.
-          </p>
-        )}
-      </SectionWrapper>
-
-      {/* CTA */}
-      <div style={{ background: '#111110', borderTop: '1px solid #252520' }}>
-        <SectionWrapper>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '1.5rem',
-          }}>
-            <div>
-              <h3 style={{
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '1.5rem',
-                fontWeight: 700,
-                color: '#F2EDE4',
-                letterSpacing: '-0.02em',
-                marginBottom: '0.4rem',
-              }}>
-                Ready to build something?
-              </h3>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: '#7A7670' }}>
-                Let's create your next product.
-              </p>
-            </div>
-            <Link
-              to="/contact"
-              style={{
-                fontFamily: 'Inter, sans-serif',
-                fontWeight: 600,
-                fontSize: '0.9rem',
-                color: '#0C0C0A',
-                background: '#C9A96E',
-                padding: '0.85rem 2rem',
-                borderRadius: '5px',
-                textDecoration: 'none',
-                transition: 'background 0.2s',
-                whiteSpace: 'nowrap',
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = '#E8D5B0'}
-              onMouseLeave={e => e.currentTarget.style.background = '#C9A96E'}
-            >
-              Hire Me →
-            </Link>
+          <div>
+            <h3 style={{
+              fontFamily: 'Space Grotesk, sans-serif',
+              fontSize: '1.5rem',
+              fontWeight: 700,
+              color: '#F2EDE4',
+              letterSpacing: '-0.02em',
+              marginBottom: '0.4rem',
+            }}>
+              Ready to build something?
+            </h3>
+            <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', color: '#7A7670' }}>
+              Let's create your next product.
+            </p>
           </div>
-        </SectionWrapper>
+          <Link
+            to="/contact"
+            style={{
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 600,
+              fontSize: '0.9rem',
+              color: '#0C0C0A',
+              background: '#C9A96E',
+              padding: '0.85rem 2rem',
+              borderRadius: '5px',
+              textDecoration: 'none',
+              transition: 'background 0.2s',
+              whiteSpace: 'nowrap',
+            }}
+            onMouseEnter={e => e.currentTarget.style.background = '#E8D5B0'}
+            onMouseLeave={e => e.currentTarget.style.background = '#C9A96E'}
+          >
+            Contact Me →
+          </Link>
+        </div>
       </div>
 
-      <style>{gridStyles}</style>
+      <style>{`
+        .project-row {
+          display: grid;
+          grid-template-columns: 72px 1fr auto;
+          gap: 2.5rem;
+          align-items: start;
+          padding: 3.75rem 0;
+          border-bottom: 1px solid #252520;
+          cursor: default;
+          border-left: 2px solid transparent;
+          padding-left: 1.5rem;
+          margin-left: -1.5rem;
+          padding-right: 1.5rem;
+          margin-right: -1.5rem;
+          transition: border-left-color 0.25s ease, background 0.25s ease;
+        }
+        .project-row:hover {
+          background: #0F0F0D;
+          border-left-color: #C9A96E;
+        }
+        .project-row:first-child {
+          border-top: 1px solid #252520;
+        }
+        .project-row-num {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #7A7670;
+          padding-top: 0.3rem;
+          letter-spacing: 0.04em;
+        }
+        .project-row-link {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: #7A7670;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          padding: 0.5rem 1rem;
+          border: 1px solid #252520;
+          border-radius: 4px;
+          white-space: nowrap;
+          margin-top: 0.2rem;
+          transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .project-row-link:hover {
+          color: #C9A96E;
+          border-color: #C9A96E;
+        }
+        .project-row-link.disabled {
+          opacity: 0.3;
+          pointer-events: none;
+        }
+        @media (max-width: 640px) {
+          .project-row {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+          }
+          .project-row-num { display: none; }
+        }
+      `}</style>
     </div>
   )
 }
 
-function ProjectCard({ project, index, featured }) {
+function ProjectRow({ project, index }) {
   const num = String(index + 1).padStart(2, '0')
+  const hasLink = project.live !== '#'
 
   return (
-    <div
-      style={{
-        height: '100%',
-        background: '#151512',
-        border: '1px solid #252520',
-        borderRadius: '8px',
-        padding: featured ? '2.5rem' : '2rem',
-        display: 'flex',
-        flexDirection: featured ? 'row' : 'column',
-        gap: featured ? '4rem' : '1.25rem',
-        alignItems: featured ? 'flex-start' : 'stretch',
-        transition: 'border-color 0.25s ease',
-        cursor: 'default',
-      }}
-      className={featured ? 'card-hover' : ''}
+    <motion.div
+      className="project-row"
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Large number */}
-      <div style={{
-        fontFamily: 'Space Grotesk, sans-serif',
-        fontSize: featured ? '4rem' : '2.75rem',
-        fontWeight: 700,
-        color: '#252520',
-        lineHeight: 1,
-        flexShrink: 0,
-        userSelect: 'none',
-        letterSpacing: '-0.04em',
-      }}>
-        {num}
-      </div>
+      {/* Index */}
+      <div className="project-row-num">{num}</div>
 
       {/* Content */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
         <span style={{
           fontFamily: 'Inter, sans-serif',
           fontSize: '0.7rem',
@@ -250,51 +194,56 @@ function ProjectCard({ project, index, featured }) {
           {project.industry}
         </span>
 
-        <h3 style={{
+        <h2 style={{
           fontFamily: 'Space Grotesk, sans-serif',
-          fontSize: featured ? '1.75rem' : '1.25rem',
+          fontSize: 'clamp(1.4rem, 3vw, 2rem)',
           fontWeight: 700,
           color: '#F2EDE4',
-          lineHeight: 1.15,
-          letterSpacing: '-0.02em',
+          lineHeight: 1.1,
+          letterSpacing: '-0.03em',
         }}>
           {project.name}
-        </h3>
+        </h2>
 
         <p style={{
           fontFamily: 'Inter, sans-serif',
           fontSize: '0.9rem',
           color: '#7A7670',
-          lineHeight: 1.7,
-          maxWidth: featured ? '520px' : 'none',
+          lineHeight: 1.75,
+          maxWidth: '560px',
         }}>
           {project.description}
         </p>
 
+        {/* Tech stack pills */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.25rem' }}>
+          {project.techStack.map(t => (
+            <span key={t} style={{
+              fontFamily: 'JetBrains Mono, monospace',
+              fontSize: '0.78rem',
+              color: '#A09890',
+              background: '#1A1916',
+              border: '1px solid #2E2D28',
+              borderRadius: '3px',
+              padding: '0.25rem 0.6rem',
+            }}>
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Link */}
+      <div>
         <a
-          href={project.live}
-          onClick={project.live === '#' ? e => e.preventDefault() : undefined}
-          target={project.live !== '#' ? '_blank' : undefined}
+          href={hasLink ? project.live : undefined}
+          target={hasLink ? '_blank' : undefined}
           rel="noopener noreferrer"
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '0.85rem',
-            fontWeight: 500,
-            color: '#C9A96E',
-            textDecoration: 'none',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.35rem',
-            marginTop: '0.5rem',
-            transition: 'gap 0.2s ease',
-            cursor: project.live === '#' ? 'default' : 'pointer',
-          }}
-          onMouseEnter={e => { if (project.live !== '#') e.currentTarget.style.gap = '0.6rem' }}
-          onMouseLeave={e => e.currentTarget.style.gap = '0.35rem'}
+          className={`project-row-link${!hasLink ? ' disabled' : ''}`}
         >
-          View Project →
+          Visit Site ↗
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }

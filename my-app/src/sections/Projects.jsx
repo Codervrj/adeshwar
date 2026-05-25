@@ -72,7 +72,7 @@ function ProjectCard({ project, index, featured }) {
   return (
     <div
       style={cardStyle}
-      className={featured ? 'card-hover' : ''}
+      className="card-hover"
     >
       {/* Large number */}
       <div style={{
