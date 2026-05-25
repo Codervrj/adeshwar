@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import SectionWrapper, { SectionHeading } from '../components/SectionWrapper'
 
-{/* Replace with real testimonials when available */}
+// Replace with real testimonials when available
 const testimonials = [
   {
     quote: "Varun demonstrated exceptional professionalism and technical expertise while working with us. His ability to understand requirements, execute clean solutions, and delivered consistently and reliably.",
