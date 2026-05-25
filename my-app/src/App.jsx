@@ -7,9 +7,11 @@ import Services from './pages/Services'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App() {
   return (
+    <>
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
@@ -24,5 +26,7 @@ export default function App() {
       </main>
       <Footer />
     </BrowserRouter>
+    <Analytics />
+    </>
   )
 }
