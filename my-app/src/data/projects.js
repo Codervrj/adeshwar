@@ -17,7 +17,7 @@ export const projects = [
       "Launched a dedicated saree e-commerce store with curated collections, rich product pages, and a smooth checkout — helping a traditional brand reach buyers across India.",
     techStack: ["React", "Node.js", "Express", "Google Sheets"],
     github: "#",
-    live: "https:/sawariyanx.in",
+    live: "https://www.sawariyanx.in/",
   },
   {
     id: 3,
